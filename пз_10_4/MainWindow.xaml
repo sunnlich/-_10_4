@@ -31,10 +31,10 @@
             </ListBox>
         </StackPanel>
         <TextBox x:Name="TextBox_Zadacha" Text="" HorizontalAlignment="Left" Margin="22,335,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="330" Height="43"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="348,384,0,0" VerticalAlignment="Top" Height="40" Width="97" Click="Button_Click"/>
-        <Button Content="Удалить" HorizontalAlignment="Left" Margin="453,384,0,0" VerticalAlignment="Top" Height="40" Width="97" Click="Button_Click_1"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="258,383,0,0" VerticalAlignment="Top" Height="40" Width="97" Click="Button_Click"/>
+        
         <StackPanel Margin="421,5,4,-5" Width="NaN" >
-            <ListBox Height="313" Width="333" x:Name="Complete_tasks" IsSynchronizedWithCurrentItem="True" SelectionMode="Multiple"  >
+            <ListBox Height="313" Width="333" x:Name="Complete_tasks" IsSynchronizedWithCurrentItem="True" SelectionMode="Multiple" MouseDoubleClick="Complete_tasks_MouseDoubleClick"  >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>

@@ -28,6 +28,7 @@ namespace пз_10_4
         {
             InitializeComponent();
             ActiveNotes = new List<zadacha>() { new zadacha("Добавить еще задачи")};  //создание листа и добавление записи
+            CompleteNotes = new List<zadacha>() { new zadacha("Добавить еще задачи") };  //создание листа и добавление записи
             Update();
         }
         public void Update()
@@ -43,15 +44,20 @@ namespace пз_10_4
             Update();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void Current_tasks_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var a = ActiveNotes.FindIndex(u => u == Current_tasks.SelectedItem);
+            CompleteNotes.Add(ActiveNotes[a]);
+            ActiveNotes.RemoveAt(a);
+            Update();
+        }
 
+        private void Complete_tasks_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var b = CompleteNotes.FindIndex(u => u == Complete_tasks.SelectedItem);
+            CompleteNotes.RemoveAt(b);
             Update();
         }
     }
